@@ -6,6 +6,11 @@
     <title>Ouzziki Lhoussaine - Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+  emailjs.init("service_6sigmeo"); 
+</script>
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
         
@@ -366,7 +371,7 @@
                     document.getElementById('contact-form').addEventListener('submit', function(e) {
                       e.preventDefault();
                   
-                      emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+                      emailjs.sendForm('service_6sigmeo', 'template_i5g5pvk', this)
                         .then(function() {
                           alert('Message sent successfully!');
                         }, function(error) {
