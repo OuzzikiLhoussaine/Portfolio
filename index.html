@@ -354,37 +354,27 @@
                     </div>
                 </div>
                 
-                <div>
-                    <div class="bg-gray-50 p-8 rounded-xl shadow-md">
-                      <h3 class="text-2xl font-semibold mb-6 text-indigo-600">Send Me a Message</h3>
-                      <form action="https://formspree.io/f/xovepoyz" method="POST">
-                        <div class="mb-4">
-                          <label for="name" class="block text-gray-700 font-medium mb-2">Name</label>
-                          <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
-                        </div>
-                        <div class="mb-4">
-                          <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
-                          <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
-                        </div>
-                        <div class="mb-4">
-                          <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
-                          <input type="text" id="subject" name="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
-                        </div>
-                        <div class="mb-6">
-                          <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
-                          <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required></textarea>
-                        </div>
+                <form id="contact-form">
+                    <input type="text" name="name" placeholder="Your Name" required />
+                    <input type="email" name="email" placeholder="Your Email" required />
+                    <input type="text" name="subject" placeholder="Subject" />
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send</button>
+                  </form>
                   
-                        <!-- Optional: Disable CAPTCHA
-                        <input type="hidden" name="_captcha" value="false">
+                  <script>
+                    document.getElementById('contact-form').addEventListener('submit', function(e) {
+                      e.preventDefault();
                   
-                         Optional: Redirect after submission -->
-                        <!-- <input type="hidden" name="_redirect" value="https://yourdomain.com/thank-you.html"> -->
+                      emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+                        .then(function() {
+                          alert('Message sent successfully!');
+                        }, function(error) {
+                          alert('Failed to send message: ' + error.text);
+                        });
+                    });
+                  </script>
                   
-                        <button type="submit" class="w-full bg-indigo-600 text-white py-3 px-4 rounded-lg font-medium hover:bg-indigo-700 transition duration-300">Send Message</button>
-                      </form>
-                    </div>
-                  </div>
                   
             </div>
         </div>
