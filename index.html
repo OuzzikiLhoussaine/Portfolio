@@ -1,62 +1,455 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Under Construction</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: #f4f4f4;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      flex-direction: column;
-      text-align: center;
-      color: #333;
-    }
-
-    .icon {
-      font-size: 80px;
-      color: #f39c12;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
-
-    p {
-      font-size: 1.2rem;
-      max-width: 500px;
-      margin: 0 auto 30px;
-    }
-
-    .spinner {
-      border: 6px solid #ddd;
-      border-top: 6px solid #f39c12;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      animation: spin 1s linear infinite;
-      margin-top: 20px;
-    }
-
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ouzziki Lhoussaine - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+        }
+        
+        .skill-bar {
+            height: 8px;
+            border-radius: 4px;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 4px;
+            bottom: -8px;
+            left: 20%;
+            background: linear-gradient(90deg, #6e8efb, #a777e3);
+            border-radius: 2px;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #6e8efb;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+    </style>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-md z-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-xl font-bold text-indigo-600">Ouzziki Lhoussaine</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="nav-link px-3 py-2 text-sm font-medium hover:text-indigo-600">Home</a>
+                        <a href="#about" class="nav-link px-3 py-2 text-sm font-medium hover:text-indigo-600">About</a>
+                        <a href="#skills" class="nav-link px-3 py-2 text-sm font-medium hover:text-indigo-600">Skills</a>
+                        <a href="#contact" class="nav-link px-3 py-2 text-sm font-medium hover:text-indigo-600">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-gray-500 hover:text-indigo-600 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 text-base font-medium hover:text-indigo-600">Home</a>
+                <a href="#about" class="block px-3 py-2 text-base font-medium hover:text-indigo-600">About</a>
+                <a href="#skills" class="block px-3 py-2 text-base font-medium hover:text-indigo-600">Skills</a>
+                <a href="#contact" class="block px-3 py-2 text-base font-medium hover:text-indigo-600">Contact</a>
+            </div>
+        </div>
+    </nav>
 
-  <div class="icon">🚧</div>
-  <h1>Page Under Construction</h1>
-  <p>We’re working hard to bring you something amazing! This page will be available soon. Thank you for your patience.</p>
-  <div class="spinner"></div>
+    <!-- Hero Section -->
+    <section id="home" class="pt-24 pb-16 md:pt-32 md:pb-24 gradient-bg text-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">👋 Welcome to My Portfolio</h1>
+                    <p class="text-xl mb-8">I'm <span class="font-bold">Ouzziki Lhoussaine</span>, an aspiring software developer and computer science graduate with a passion for turning ideas into reality through code.</p>
+                    <div class="flex space-x-4">
+                        <a href="#contact" class="px-6 py-3 bg-white text-indigo-600 font-medium rounded-lg hover:bg-gray-100 transition duration-300">Contact Me</a>
+                        <a href="#about" class="px-6 py-3 border-2 border-white text-white font-medium rounded-lg hover:bg-white hover:text-indigo-600 transition duration-300">Learn More</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-xl">
+                        <!-- Placeholder for your photo -->
+                        <div class="w-full h-full bg-indigo-200 flex items-center justify-center">
+                            <i class="fas fa-user text-6xl text-indigo-600"></i>
+                            <img src="my pic.jpg"
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12 section-title">👨‍💻 Who Am I?</h2>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-md card-hover transition duration-300">
+                        <h3 class="text-xl font-semibold mb-4 text-indigo-600">Personal Background</h3>
+                        <p class="mb-4">Born on February 17, 2003, and based in Alnif, Tinghir, I'm a Mathematics and Computer Science student at the Faculté Polydisciplinaire in Ouarzazate.</p>
+                        <p>With a solid academic background, including a DEUG and a Bachelor's degree, my studies and personal projects have allowed me to explore both the theoretical and practical sides of tech.</p>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-md mt-8 card-hover transition duration-300">
+                        <h3 class="text-xl font-semibold mb-4 text-indigo-600">🎯 Interests</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">Cybersecurity</span>
+                            <span class="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">Web Design</span>
+                            <span class="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">Web Development</span>
+                            <span class="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">Video Games</span>
+                            <span class="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">Reading</span>
+                            <span class="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">Tech Blogs</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-md card-hover transition duration-300">
+                        <h3 class="text-xl font-semibold mb-4 text-indigo-600">🧠 Languages I Speak</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">Tamazight (Native)</span>
+                                    <span class="text-gray-600">100%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-indigo-600 h-2.5 rounded-full" style="width: 100%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">Arabic (Advanced)</span>
+                                    <span class="text-gray-600">90%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-indigo-600 h-2.5 rounded-full" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">French (Intermediate)</span>
+                                    <span class="text-gray-600">70%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-indigo-600 h-2.5 rounded-full" style="width: 70%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">English (Intermediate)</span>
+                                    <span class="text-gray-600">70%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-indigo-600 h-2.5 rounded-full" style="width: 70%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12 section-title">💼 What I Do</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Skill Card 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-md card-hover transition duration-300">
+                    <div class="text-indigo-600 mb-4">
+                        <i class="fas fa-code text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Frontend Development</h3>
+                    <p class="text-gray-600 mb-4">Building responsive and interactive user interfaces with modern technologies.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">HTML</span>
+                        <span class="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">CSS</span>
+                        <span class="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">JavaScript</span>
+                        <span class="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">Tailwind</span>
+                    </div>
+                </div>
+                
+                <!-- Skill Card 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-md card-hover transition duration-300">
+                    <div class="text-indigo-600 mb-4">
+                        <i class="fas fa-server text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Backend Development</h3>
+                    <p class="text-gray-600 mb-4">Creating robust server-side applications and APIs.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">PHP</span>
+                        <span class="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">Laravel</span>
+                        <span class="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">Node.js</span>
+                    </div>
+                </div>
+                
+                <!-- Skill Card 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-md card-hover transition duration-300">
+                    <div class="text-indigo-600 mb-4">
+                        <i class="fas fa-database text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Database Management</h3>
+                    <p class="text-gray-600 mb-4">Designing and managing efficient database systems.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">SQL</span>
+                        <span class="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">MySQL</span>
+                        <span class="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">MongoDB</span>
+                    </div>
+                </div>
+                
+                <!-- Skill Card 4 -->
+                <div class="bg-white p-6 rounded-xl shadow-md card-hover transition duration-300">
+                    <div class="text-indigo-600 mb-4">
+                        <i class="fas fa-laptop-code text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Programming</h3>
+                    <p class="text-gray-600 mb-4">Developing applications and solving problems with various programming languages.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">C</span>
+                        <span class="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">Java</span>
+                        <span class="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">Python</span>
+                    </div>
+                </div>
+                
+                <!-- Skill Card 5 -->
+                <div class="bg-white p-6 rounded-xl shadow-md card-hover transition duration-300">
+                    <div class="text-indigo-600 mb-4">
+                        <i class="fas fa-project-diagram text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Software Design</h3>
+                    <p class="text-gray-600 mb-4">Using UML and Agile methodologies to design efficient software solutions.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">UML</span>
+                        <span class="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">Scrum</span>
+                        <span class="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">Agile</span>
+                    </div>
+                </div>
+                
+                <!-- Skill Card 6 -->
+                <div class="bg-white p-6 rounded-xl shadow-md card-hover transition duration-300">
+                    <div class="text-indigo-600 mb-4">
+                        <i class="fas fa-tools text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Tools & OS</h3>
+                    <p class="text-gray-600 mb-4">Proficient with various development tools and operating systems.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">VS Code</span>
+                        <span class="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">Eclipse</span>
+                        <span class="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">Windows</span>
+                        <span class="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">Linux</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12 section-title">📫 Let's Connect!</h2>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-md">
+                        <h3 class="text-2xl font-semibold mb-6 text-indigo-600">Get in Touch</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 bg-indigo-100 p-3 rounded-full text-indigo-600">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-medium">Phone</h4>
+                                    <p class="text-gray-600">+212 651382345</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 bg-indigo-100 p-3 rounded-full text-indigo-600">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-medium">Email</h4>
+                                    <p class="text-gray-600">ouzziki.lhoussaine@gmail.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 bg-indigo-100 p-3 rounded-full text-indigo-600">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-medium">LinkedIn</h4>
+                                    <p class="text-gray-600">Connect with me on LinkedIn</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="text-lg font-medium mb-4">Follow Me</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="w-10 h-10 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center hover:bg-indigo-600 hover:text-white transition duration-300">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center hover:bg-indigo-600 hover:text-white transition duration-300">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center hover:bg-indigo-600 hover:text-white transition duration-300">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center hover:bg-indigo-600 hover:text-white transition duration-300">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-md">
+                        <h3 class="text-2xl font-semibold mb-6 text-indigo-600">Send Me a Message</h3>
+                        <form>
+                            <div class="mb-4">
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            </div>
+                            <div class="mb-4">
+                                <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
+                                <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-indigo-600 text-white py-3 px-4 rounded-lg font-medium hover:bg-indigo-700 transition duration-300">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <a href="#" class="text-xl font-bold">Ouzziki Lhoussaine</a>
+                    <p class="mt-2 text-gray-400">Turning ideas into reality through code</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
+                <p>&copy; 2023 Ouzziki Lhoussaine. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+        
+        // Add shadow to navbar on scroll
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 10) {
+                nav.classList.add('shadow-lg');
+            } else {
+                nav.classList.remove('shadow-lg');
+            }
+        });
+    </script>
 </body>
 </html>
