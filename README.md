@@ -1,6 +1,6 @@
 # Portfolio Website
 
-![Website Preview](https://ouzzikilhoussaine.site/assets/preview.jpg) *(Optional: Add a preview image if available)*
+![Website Preview](https://ouzzikilhoussaine.site) *(Optional: Add a preview image if available)*
 
 This repository contains the source code for my personal portfolio website hosted at [ouzzikilhoussaine.site](https://ouzzikilhoussaine.site).
 
